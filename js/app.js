@@ -21,6 +21,7 @@ const seattle = {
   avgSale:6.3,
   custPerHour:[],
   salePerHr:[],
+  totalCookiesSold:0,
   numCust : function(){
     for(let i=0;i<14;i++){
       this.custPerHour[i] = randomCust (23,65) ;
@@ -32,6 +33,14 @@ const seattle = {
       this.salePerHr[j]= randomSale(this.custPerHour[j],this.avgSale);
     }
     console.log(this.salePerHr);
+  },
+  cookiesSold : function(){
+    let totalCookiesSold = 0
+    for(let l=0;l<this.salePerHr.length;l++){
+      this.totalCookiesSold= totalCookies(this.totalCookiesSold,this.salePerHr[l]);
+      console.log(totalCookiesSold);
+    }
+    return totalCookiesSold;
   }
 };
 
@@ -47,6 +56,7 @@ const tokyo = {
   avgSale:1.2,
   custPerHour:[],
   salePerHr:[],
+  totalCookiesSold:0 ,
   numCust : function(){
     for(let i=0;i<14;i++){
       this.custPerHour[i] = randomCust (3,24) ;
@@ -58,6 +68,14 @@ const tokyo = {
       this.salePerHr[j]= randomSale(this.custPerHour[j],this.avgSale);
     }
     console.log(this.salePerHr);
+  },
+  cookiesSold : function(){
+    let totalCookiesSold = 0
+    for(let l=0;l<this.salePerHr.length;l++){
+      this.totalCookiesSold= totalCookies(this.totalCookiesSold,this.salePerHr[l]);
+      console.log(totalCookiesSold);
+    }
+    return totalCookiesSold;
   }
 };
 const dubai = {
@@ -67,6 +85,7 @@ const dubai = {
   avgSale:3.7,
   custPerHour:[],
   salePerHr:[],
+  totalCookiesSold:0,
   numCust : function(){
     for(let i=0;i<14;i++){
       this.custPerHour[i] = randomCust (11,38) ;
@@ -78,6 +97,14 @@ const dubai = {
       this.salePerHr[j]= randomSale(this.custPerHour[j],this.avgSale);
     }
     console.log(this.salePerHr);
+  },
+  cookiesSold : function(){
+    let totalCookiesSold = 0
+    for(let l=0;l<this.salePerHr.length;l++){
+      this.totalCookiesSold= totalCookies(this.totalCookiesSold,this.salePerHr[l]);
+      console.log(totalCookiesSold);
+    }
+    return totalCookiesSold;
   }
 };
 const paris = {
@@ -87,6 +114,7 @@ const paris = {
   avgSale:2.3,
   custPerHour:[],
   salePerHr:[],
+  totalCookiesSold:0,
   numCust : function(){
     for(let i=0;i<14;i++){
       this.custPerHour[i] = randomCust (20,38) ;
@@ -98,6 +126,14 @@ const paris = {
       this.salePerHr[j]= randomSale(this.custPerHour[j],this.avgSale);
     }
     console.log(this.salePerHr);
+  },
+  cookiesSold : function(){
+    let totalCookiesSold = 0
+    for(let l=0;l<this.salePerHr.length;l++){
+      this.totalCookiesSold= totalCookies(this.totalCookiesSold,this.salePerHr[l]);
+      console.log(totalCookiesSold);
+    }
+    return totalCookiesSold;
   }
 };
 const lima = {
@@ -107,6 +143,7 @@ const lima = {
   avgSale:4.6,
   custPerHour:[],
   salePerHr:[],
+  totalCookiesSold:0,
   numCust : function(){
     for(let i=0;i<14;i++){
       this.custPerHour[i] = randomCust (2,16) ;
@@ -117,6 +154,14 @@ const lima = {
       this.salePerHr[j]= randomSale(this.custPerHour[j],this.avgSale);
     }
     console.log(this.salePerHr);
+  },
+  cookiesSold : function(){
+    let totalCookiesSold = 0
+    for(let l=0;l<this.salePerHr.length;l++){
+      this.totalCookiesSold= totalCookies(this.totalCookiesSold,this.salePerHr[l]);
+      console.log(totalCookiesSold);
+    }
+    return totalCookiesSold;
   }
 };
 
@@ -129,7 +174,10 @@ function randomSale(c,d){
   let salePerHr=Math.floor((c*d));
   return salePerHr;
 }
-
+function totalCookies(e,f){
+  let totalCookiesSold = e+f;
+  return totalCookiesSold;
+}
 console.log(seattle);
 
 seattle.numCust();
@@ -143,6 +191,12 @@ tokyo.totalSale();
 dubai.totalSale();
 paris.totalSale();
 lima.totalSale();
+
+seattle.cookiesSold();
+tokyo.cookiesSold();
+dubai.cookiesSold();
+paris.cookiesSold();
+lima.cookiesSold();
 
 const storesArray =[seattle,tokyo,dubai,paris,lima];
 const timeArray=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
@@ -160,7 +214,12 @@ function renderStore(store){
     let liEl = document.createElement('li');
     liEl.textContent = `${timeArray[i]}:${store.salePerHr[i]} perhour`;
     ulEl.appendChild(liEl)}
+    let liEl = document.createElement('li');
+    liEl.textContent = `total : ${store.totalCookiesSold}`;
+    ulEl.appendChild(liEl);
+
 }
+  
 
 for(k=0;k<storesArray.length;k++){
   renderStore(storesArray[k]);
