@@ -145,21 +145,21 @@ paris.totalSale();
 lima.totalSale();
 
 const storesArray =[seattle,tokyo,dubai,paris,lima];
-
+const timeArray=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 const storesDivEl = document.getElementById('stores');
 function renderStore(store){
-let sectionEl = document.createElement('section');
-// parentElem.appendChild(childElem)
-storesDivEl.appendChild(sectionEl);
-let h2El = document.createElement('h2');
-h2El.textContent = store.name;
-sectionEl.appendChild(h2El);
-let ulEl = document.createElement('ul');
-sectionEl.appendChild(ulEl);
-for (let i = 0; i < store.salePerHr.length; i++) {
-  let liEl = document.createElement('li');
-  liEl.textContent = store.salePerHr[i];
-  ulEl.appendChild(liEl)}
+  let sectionEl = document.createElement('section');
+  // parentElem.appendChild(childElem)
+  storesDivEl.appendChild(sectionEl);
+  let h2El = document.createElement('h2');
+  h2El.textContent = store.name;
+  sectionEl.appendChild(h2El);
+  let ulEl = document.createElement('ul');
+  sectionEl.appendChild(ulEl);
+  for (let i = 0; i < store.salePerHr.length; i++) {
+    let liEl = document.createElement('li');
+    liEl.textContent = `${timeArray[i]}:${store.salePerHr[i]} perhour`;
+    ulEl.appendChild(liEl)}
 }
 
 for(k=0;k<storesArray.length;k++){
