@@ -19,56 +19,86 @@ const seattle = {
   minCust:23,
   maxCust:65,
   avgSale:6.3,
-  custPerHour:0,
+  custPerHour:[],
+  totalSalePerHr:[],
   numCust : function(){
-    this.custPerHour = randomCust (23,65) + ' per hour'
+    for(let i=0;i<14;i++){
+    this.custPerHour[i] = randomCust (23,65) ;
     console.log(this.custPerHour)
+    }
   }
-}
+  
+  // totalSale : function(){
+  //   for(let j=0;j<14;j++){
+  //     this.totalSalePerHr[j]= randomSale(this.custPerHour,this.avgSale);
+
+  //   }
+  //   console.log(this.totalSalePerHr);
+  // }
+};
+
+
+
+// function randomSale(c,d){
+//   let totalSalePerHr=(c*d);
+//   return totalSalePerHr;
+// }
+
+// seattle.totalSale();
+
+
 const tokyo = {
   name:'tokyo',
   minCust:3,
   maxCust:24,
   avgSale:1.2,
-  custPerHour:0,
+  custPerHour:[],
+  totalSalePerHr:[],
   numCust : function(){
-    this.custPerHour = randomCust (3,24) + ' per hour'
-    console.log(this.custPerHour)
-  }
-}
+    for(let i=0;i<14;i++){
+      this.custPerHour[i] = randomCust (3,24) ;
+      console.log(this.custPerHour)
+      }
+}}
 const dubai = {
   name:'dubai',
   minCust:11,
   maxCust:38,
   avgSale:3.7,
-  custPerHour:0,
+  custPerHour:[],
+  totalSalePerHr:[],
   numCust : function(){
-    this.custPerHour = randomCust (11,38) + ' per hour'
-    console.log(this.custPerHour)
-  }
-}
+    for(let i=0;i<14;i++){
+      this.custPerHour[i] = randomCust (11,38) ;
+      console.log(this.custPerHour)
+      }
+}}
 const paris = {
   name:'paris',
   minCust:20,
   maxCust:38,
   avgSale:2.3,
-  custPerHour:0,
+  custPerHour:[],
+  totalSalePerHr:[],
   numCust : function(){
-    this.custPerHour = randomCust (20,38) + ' per hour'
-    console.log(this.custPerHour)
-  }
-}
+    for(let i=0;i<14;i++){
+      this.custPerHour[i] = randomCust (20,38) ;
+      console.log(this.custPerHour)
+      }
+}}
 const lima = {
   name:'lima',
   minCust:2,
   maxCust:16,
   avgSale:4.6,
-  custPerHour:0,
+  custPerHour:[],
+  totalSalePerHr:[],
   numCust : function(){
-    this.custPerHour = randomCust (2,16) + ' per hour'
-    console.log(this.custPerHour)
-  }
-}
+    for(let i=0;i<14;i++){
+      this.custPerHour[i] = randomCust (2,16) ;
+      console.log(this.custPerHour)
+      }
+}}
 
 // function for random cust
 function randomCust(a,b){
@@ -83,3 +113,26 @@ paris.numCust();
 lima.numCust();
 
 const storesArray =[seattle,tokyo,dubai,paris,lima];
+
+const storesDivEl = document.getElementById('stores');
+
+let sectionEl = document.createElement('section');
+  // parentElem.appendChild(childElem)
+  storesDivEl.appendChild(sectionEl);
+ 
+  let h2El = document.createElement('h2');
+  h2El.textContent = seattle.name;
+  sectionEl.appendChild(h2El);
+  
+  let ulEl = document.createElement('ul');
+  sectionEl.appendChild(ulEl);
+  for (let i = 0; i < seattle.custPerHour.length; i++) {
+    let liEl = document.createElement('li');
+    liEl.textContent = seattle.custPerHour[i];
+    ulEl.appendChild(liEl)}
+//<h2>name of store</h2>
+//<section id='stores">
+//<ul>
+//  <li>of total sales per hr</li>
+//</ul>
+//<section>
