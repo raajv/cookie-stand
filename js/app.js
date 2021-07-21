@@ -23,29 +23,21 @@ const seattle = {
   salePerHr:[],
   numCust : function(){
     for(let i=0;i<14;i++){
-    this.custPerHour[i] = randomCust (23,65) ;
-    
-    console.log(this.custPerHour)
+      this.custPerHour[i] = randomCust (23,65) ;
+      console.log(this.custPerHour)
     }
   },
-  
-   totalSale : function(){
+  totalSale : function(){
     for(let j=0;j<14;j++){
-     this.salePerHr[j]= randomSale(this.custPerHour[j],this.avgSale);
-
+      this.salePerHr[j]= randomSale(this.custPerHour[j],this.avgSale);
     }
     console.log(this.salePerHr);
-   }
+  }
 };
 
-seattle.numCust();
 
- function randomSale(c,d){
-   let salePerHr=Math.floor((c*d));
- return salePerHr;
- }
 
- seattle.totalSale();
+
 
 
 const tokyo = {
@@ -54,85 +46,125 @@ const tokyo = {
   maxCust:24,
   avgSale:1.2,
   custPerHour:[],
-  totalSalePerHr:[],
+  salePerHr:[],
   numCust : function(){
     for(let i=0;i<14;i++){
       this.custPerHour[i] = randomCust (3,24) ;
       console.log(this.custPerHour)
-      }
-}}
+    }
+  },
+  totalSale : function(){
+    for(let j=0;j<14;j++){
+      this.salePerHr[j]= randomSale(this.custPerHour[j],this.avgSale);
+    }
+    console.log(this.salePerHr);
+  }
+};
 const dubai = {
   name:'dubai',
   minCust:11,
   maxCust:38,
   avgSale:3.7,
   custPerHour:[],
-  totalSalePerHr:[],
+  salePerHr:[],
   numCust : function(){
     for(let i=0;i<14;i++){
       this.custPerHour[i] = randomCust (11,38) ;
-      console.log(this.custPerHour)
-      }
-}}
+      console.log(this.custPerHour);
+    }
+  },
+  totalSale : function(){
+    for(let j=0;j<14;j++){
+      this.salePerHr[j]= randomSale(this.custPerHour[j],this.avgSale);
+    }
+    console.log(this.salePerHr);
+  }
+};
 const paris = {
   name:'paris',
   minCust:20,
   maxCust:38,
   avgSale:2.3,
   custPerHour:[],
-  totalSalePerHr:[],
+  salePerHr:[],
   numCust : function(){
     for(let i=0;i<14;i++){
       this.custPerHour[i] = randomCust (20,38) ;
-      console.log(this.custPerHour)
-      }
-}}
+      console.log(this.custPerHour);
+    }
+  },
+  totalSale : function(){
+    for(let j=0;j<14;j++){
+      this.salePerHr[j]= randomSale(this.custPerHour[j],this.avgSale);
+    }
+    console.log(this.salePerHr);
+  }
+};
 const lima = {
   name:'lima',
   minCust:2,
   maxCust:16,
   avgSale:4.6,
   custPerHour:[],
-  totalSalePerHr:[],
+  salePerHr:[],
   numCust : function(){
     for(let i=0;i<14;i++){
       this.custPerHour[i] = randomCust (2,16) ;
-      console.log(this.custPerHour)
-      }
-}}
+      console.log(this.custPerHour);}
+  },
+  totalSale : function(){
+    for(let j=0;j<14;j++){
+      this.salePerHr[j]= randomSale(this.custPerHour[j],this.avgSale);
+    }
+    console.log(this.salePerHr);
+  }
+};
 
 // function for random cust
 function randomCust(a,b){
   let custPerHour = Math.floor(Math.random()*(b - a + 1) + a);
   return custPerHour;
 }
+function randomSale(c,d){
+  let salePerHr=Math.floor((c*d));
+  return salePerHr;
+}
 
 console.log(seattle);
 
+seattle.numCust();
 tokyo.numCust();
 dubai.numCust();
 paris.numCust();
 lima.numCust();
 
+seattle.totalSale();
+tokyo.totalSale();
+dubai.totalSale();
+paris.totalSale();
+lima.totalSale();
+
 const storesArray =[seattle,tokyo,dubai,paris,lima];
 
 const storesDivEl = document.getElementById('stores');
-
+function renderStore(store){
 let sectionEl = document.createElement('section');
-  // parentElem.appendChild(childElem)
-  
-  storesDivEl.appendChild(sectionEl);
- 
-  let h2El = document.createElement('h2');
-  h2El.textContent = seattle.name;
-  sectionEl.appendChild(h2El);
-  
-  let ulEl = document.createElement('ul');
-  sectionEl.appendChild(ulEl);
-  for (let i = 0; i < seattle.custPerHour.length; i++) {
-    let liEl = document.createElement('li');
-    liEl.textContent = seattle.custPerHour[i];
-    ulEl.appendChild(liEl)}
+// parentElem.appendChild(childElem)
+storesDivEl.appendChild(sectionEl);
+let h2El = document.createElement('h2');
+h2El.textContent = store.name;
+sectionEl.appendChild(h2El);
+let ulEl = document.createElement('ul');
+sectionEl.appendChild(ulEl);
+for (let i = 0; i < store.salePerHr.length; i++) {
+  let liEl = document.createElement('li');
+  liEl.textContent = store.salePerHr[i];
+  ulEl.appendChild(liEl)}
+}
+
+for(k=0;k<storesArray.length;k++){
+  renderStore(storesArray[k]);
+}
 //<h2>name of store</h2>
 //<section id='stores">
 //<ul>
