@@ -20,31 +20,32 @@ const seattle = {
   maxCust:65,
   avgSale:6.3,
   custPerHour:[],
-  totalSalePerHr:[],
+  salePerHr:[],
   numCust : function(){
     for(let i=0;i<14;i++){
     this.custPerHour[i] = randomCust (23,65) ;
+    
     console.log(this.custPerHour)
     }
-  }
+  },
   
-  // totalSale : function(){
-  //   for(let j=0;j<14;j++){
-  //     this.totalSalePerHr[j]= randomSale(this.custPerHour,this.avgSale);
+   totalSale : function(){
+    for(let j=0;j<14;j++){
+     this.salePerHr[j]= randomSale(this.custPerHour[j],this.avgSale);
 
-  //   }
-  //   console.log(this.totalSalePerHr);
-  // }
+    }
+    console.log(this.salePerHr);
+   }
 };
 
+seattle.numCust();
 
+ function randomSale(c,d){
+   let salePerHr=Math.floor((c*d));
+ return salePerHr;
+ }
 
-// function randomSale(c,d){
-//   let totalSalePerHr=(c*d);
-//   return totalSalePerHr;
-// }
-
-// seattle.totalSale();
+ seattle.totalSale();
 
 
 const tokyo = {
@@ -105,8 +106,9 @@ function randomCust(a,b){
   let custPerHour = Math.floor(Math.random()*(b - a + 1) + a);
   return custPerHour;
 }
+
 console.log(seattle);
-seattle.numCust();
+
 tokyo.numCust();
 dubai.numCust();
 paris.numCust();
@@ -118,6 +120,7 @@ const storesDivEl = document.getElementById('stores');
 
 let sectionEl = document.createElement('section');
   // parentElem.appendChild(childElem)
+  
   storesDivEl.appendChild(sectionEl);
  
   let h2El = document.createElement('h2');
@@ -135,4 +138,4 @@ let sectionEl = document.createElement('section');
 //<ul>
 //  <li>of total sales per hr</li>
 //</ul>
-//<section>
+//<section
