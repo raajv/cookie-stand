@@ -47,11 +47,11 @@ Store.prototype.totalSold= function(){
     this.totalCookiesSold= this.totalCookiesSold + this.salePerHr[k];
   }
 };
-Store.prototype.totalSalePerHr = function(){
-  for (let l=0;l<14;l++){
-
-}
-}
+// let totalSalePerHr = function(){
+//   for (let l=0;l<14;l++){
+// let totalPerHrSale = Store.allstores.salePerHr[l];
+// }
+// };
 const seattle = new Store('Seattle',23,65,6.3);
 const tokyo = new Store('Tokyo',3,24,1.2);
 const dubai = new Store('Dubai',11,38,3.7);
