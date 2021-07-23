@@ -42,7 +42,8 @@ let minCust=e.target.minCustomer.value
 let maxCust=e.target.maxCustomer.value
 let avgSale=e.target.avgSale.value
 
-let newStore= new Store(name,minCust,maxCust,avgSale)
+let newStore= new Store(name,minCust,maxCust,avgSale);
+tableEl.innerHTML='';
 let currentStore=newStore;
     currentStore.randomCustPerHour();
     currentStore.cookieSalePerHr();
