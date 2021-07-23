@@ -34,7 +34,7 @@ const dubai = new Store('Dubai',11,38,3.7);
 const paris = new Store('Paris',20,38,2.3);
 const lima = new Store('Lima',2,16,4.6,);
 
-//form
+//form for new store
 function handleSubmit(e){
   e.preventDefault();
 let name = e.target.storeName.value
@@ -58,7 +58,7 @@ const formEl=document.getElementById('addStoreForm');
 formEl.addEventListener('submit',handleSubmit);
 
 
-//prototypes
+//prototypes for 3 functions
 
 
 Store.prototype.randomCustPerHour = function(){
