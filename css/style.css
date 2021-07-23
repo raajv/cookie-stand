@@ -1,0 +1,116 @@
+header ul li {
+  display:inline-block;
+  margin:20px;
+  
+}
+header ul{
+  display:inline-block;
+}
+body{
+  color:saddlebrown;
+  text-align:center;
+}
+/* #hero {
+  display: inline-block;
+   margin:20px;
+  text-align:center; 
+} */
+
+  /* display: inline-block;  */
+  /* margin:10px ;
+  text-align: center; */
+   /* display:flex;
+  justify-content:space-evenly; */
+
+/* #main img{
+  margin:14px;
+} */
+li{
+  font-size: large;
+}
+header {
+background-color:salmon;
+display:flex;
+justify-content: space-evenly;
+height:100px;
+}
+header h1{
+  text-shadow: sandybrown;
+}
+footer{
+  margin:14px;
+  height:80px;
+  background-color: grey;
+}
+button{
+  background-color: salmon;
+  color:white;
+}
+/* #feature{
+  display: flex;
+  justify-content: center;
+  
+ } */
+ a{
+   text-decoration: none;
+   color:rgb(102, 26, 26);
+   h
+ }
+ a:hover{
+   color: sandybrown;
+ }
+ img{
+   width:250px;
+   height:150px;
+ }
+ #hero{
+   width:70%;
+   height:70%;
+ }
+/* #feature p{
+  overflow: scroll;
+  width:400px;
+  height:400px;
+  margin-left: 90px;
+} */
+section{
+  display:inline-block;
+  border: darkred dotted;
+  
+}
+h1{
+font-size: xx-large;
+}
+h2{
+  font-size:x-large;
+  font-style:italic;
+}
+
+#table{
+display: flex;
+justify-content: center;
+
+}
+#stores{
+  border:salmon solid 3px; 
+}
+tr{
+  border:salmon solid 2px; 
+}
+th{
+  border:salmon solid 2px; 
+  font-weight: bold;
+}
+td{
+  border:salmon solid 2px; 
+}
+h4{
+  font-size:medium;
+  font-weight: bold;
+  
+}
+h3{
+  font-size: large;
+  font-weight: 500;
+  text-decoration: underline;
+}
